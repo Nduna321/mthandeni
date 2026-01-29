@@ -19,10 +19,12 @@
 
         .topnav {
             display: flex;
-            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
             overflow: hidden;
             margin-bottom: 20px;
+            position: relative;
         }
         
         .topnav a {
@@ -31,8 +33,6 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
-            flex: 1 1 auto;
-            min-width: 80px;
             transition: background-color 0.3s;
         }
         
@@ -44,6 +44,26 @@
         .topnav a.active {
             background-color: #04AA6D;
             color: white;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #f2f2f2;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 14px 16px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex: 1;
+        }
+
+        .nav-links a {
+            flex: 1 1 auto;
+            min-width: 80px;
         }
         
         h1 {
@@ -88,6 +108,38 @@
             font-weight: bold;
             color: #333;
         }
+
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: block;
+                order: 2;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 55px;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                flex: none;
+                width: 100%;
+                border-bottom: 1px solid #555;
+            }
+
+            .topnav {
+                flex-wrap: wrap;
+            }
+        }
         
         @media (min-width: 768px) {
             form {
@@ -98,13 +150,28 @@
 </head>
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="index.html" class="active">Home</a>
-       
-        <a href="Music.html">Music</a>
-        <a href="Products.html">Products</a>
-        <a href="Stories.html">Stories</a>
-        <a href="Contact-Us.html">Contact-Us</a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="Music.html">Music</a>
+            <a href="Products.html">Products</a>
+            <a href="Stories.html">Stories</a>
+            <a href="Contact-Us.html">Contact-Us</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
       </div>
+
+      <script>
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+    </script>
+
       <form action="#">
         <h1><i>My Products</i></h1>
 
