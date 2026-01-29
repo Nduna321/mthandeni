@@ -5,45 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mthandeni Wishes Sibanda</title>
     <style>
-        .topnav {
-        overflow: hidden;
-      background-color: #333;
-      height: 20%;
-      
-      
-    }
-    
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    .topnav a.active {
-      background-color: #04AA6D;
-      color: white;
-    }
-    img
-        {
-            width: 230px;
-            height: 230px;
-            align-self: center;
-            vertical-align: middle;
-            border-radius: 50%;
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body{
+            background-color: wheat;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .topnav {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #333;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            flex: 1 1 auto;
+            min-width: 80px;
+            transition: background-color 0.3s;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            max-width: 230px;
+        }
+
         .imageOutline{
-            width: 250px;
-            height: 250px;
-            margin-top: 20px;
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            margin: 20px auto;
             border-radius: 50%;
             outline: 5px solid black;
             display: flex;
@@ -51,39 +65,67 @@
             justify-content: center;
             object-fit: contain;
         }
-        .horizontalArrangment
-        {
-            display: grid;
-            columns: 2;
-            grid-template-columns: min-content 400px;
+
+        .horizontalArrangment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            gap: 20px;
+            padding: 20px;
         }
-        .verticalArrangement
-        {
-            flex-wrap: wrap;
+
+        .verticalArrangement {
             display: flex;
             flex-direction: column;
             justify-content: start;
-            align-items: start;
+            align-items: center;
+            width: 100%;
+            padding: 0 20px;
         }
 
-         
-        body{
-            background-color: wheat;
-            font-weight: bold;
-
+        .verticalArrangement h1 {
+            text-align: center;
+            margin-bottom: 20px;
         }
-        p{
+
+        .verticalArrangement p {
             text-decoration-color: black;
             font-weight: bold;
             line-height: 1.5;
+            text-align: center;
         }
-   
+
+        @media (min-width: 768px) {
+            .topnav {
+                flex-wrap: nowrap;
+            }
+
+            .topnav a {
+                flex: 1 1 auto;
+            }
+
+            .horizontalArrangment {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+
+            .verticalArrangement {
+                align-items: flex-start;
+                padding: 0 20px;
+                width: auto;
+            }
+
+            .verticalArrangement h1,
+            .verticalArrangement p {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
     <div style="margin-top: 5%;" class="topnav" id="myTopnav">
-        <a href="home.html" class="active">Home</a>
+        <a href="index.html" class="active">Home</a>
        
         <a href="Music.html">Music</a>
         <a href="Products.html">Products</a>
@@ -91,11 +133,11 @@
         <a href="Contact-Us.html">Contact-Us</a>
     </div>
 
- <div style="margin-top: 5%;" class="horizontalArrangment">
+ <div class="horizontalArrangment">
      <div class="imageOutline">
          <img src="316556757_440936681522933_7960323815351792904_n.jpg">
      </div>
-     <div class="verticalArrangement" style="margin-left: 20px;">
+     <div class="verticalArrangement">
          <h1><i>M.J.R. Nyamazana99</i></h1>
          <p>I sell various types of products at affordable prices. Additionally, I write short stories to entertain and motivate people. Furthermore, I offer good music on this website for you to listen to, free of charge. All options are accessible through the link at the top. If you wish to get in touch with me, click on the 'Contact Us' page</p>
      </div>

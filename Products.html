@@ -5,89 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <style>
-    .topnav {
-        overflow: hidden;
-      background-color: #333;
-      height: 20%;
-      
-      
-    }
-    
-    .topnav a {
-      float: left;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    .topnav a.active {
-      background-color: #04AA6D;
-      color: white;
-    }
-    
-            h1
-            {
-                font-family: sans-serif;
-                font-weight: bold;
-                color: #252525;
-                font-size: 30px;
-            }
-            body{
-              background-color: #ddd;
-            }
-         
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-            img {
-              max-height: 11%;
-    max-width: 40vw; /* adjust the image to half of viewport width on screens larger than 768px */
-    
-    
-  }
-    
+        body {
+            background-color: #ddd;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .topnav {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #333;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .topnav a {
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            flex: 1 1 auto;
+            min-width: 80px;
+            transition: background-color 0.3s;
+        }
+        
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        h1 {
+            font-family: sans-serif;
+            font-weight: bold;
+            color: #252525;
+            font-size: clamp(24px, 5vw, 36px);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0;
+            margin: 0;
+        }
+
+        form > div {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        @media (min-width: 768px) {
+            form {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
     <div class="topnav" id="myTopnav">
-        <a href="home.html" class="active">Home</a>
+        <a href="index.html" class="active">Home</a>
        
         <a href="Music.html">Music</a>
         <a href="Products.html">Products</a>
         <a href="Stories.html">Stories</a>
         <a href="Contact-Us.html">Contact-Us</a>
       </div>
-      <form action="#" style="margin-left: 25vw;">
-        <h1 style="margin-bottom: 5%; margin-top: 4%;"><i>My Products</i></h1>
+      <form action="#">
+        <h1><i>My Products</i></h1>
 
-        <div style="margin-bottom: 6%;">
+        <div>
 
         <img src="295989741_354196066863662_78082279086713985_n.jpg" >
         <p>available $40</p>
       </div>
 
-       <div style="margin-bottom: 6%;">  
+       <div>  
         <img src="382361527_299554522825816_2587334874140106079_n.jpg" alt="downoading...">
         <p>available $25</p>
         </div>
 
-        <div style="margin-bottom: 6%;">
+        <div>
         <img src="242652402_153549980261606_3305431526997120664_n.jpg" alt="downoading...">
         <p>available $60</p>
       </div>
 
 
-      <div style="margin-bottom: 6%;">     
+      <div>     
         <img src="293462593_344821627801106_5853233583742104216_n (1).jpg" alt="downoading...">
         <p>available $50</p>
       </div>
 
-      <div style="margin-bottom: 6%;">     
+      <div>     
         <img src="384305360_622092933407306_407567005482387310_n.jpg" alt="downoading...">
         <p>cheap price</p>
       </div>
